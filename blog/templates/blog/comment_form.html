@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+    {% block body %}
+        <h1>New Comment</h1>
+        <div id="toolbar-container"></div>
+        <form class="comment-form" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Comment">
+        </form>
+
+        <script>
+         DecoupledEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+                toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+        </script>
+
+      
+    {% endblock body %}
+

@@ -1,0 +1,72 @@
+{% extends 'blog/base.html'%}
+{% block body %}
+<hr>
+<div class="container">
+      <div class="post-title"><h3 class="posttitle">{{post.title}}</h3>
+        </div>
+        <div class="flext">
+        {% if user.is_authenticated %}
+        <div class="box2">
+               
+                        <a class="waves-effect waves-light btn-small" href="{% url 'blog:update_post' pk=post.pk %}"><i class="material-icons">create</i>Edit</a>
+        </div>
+        <div class="box2">
+                <a class="waves-effect waves-light red btn-small" href="{% url 'blog:delete_post' pk=post.pk %}"><i class="material-icons">delete</i>Remove</a>
+        </div>
+        {% endif %}
+ </div>
+    {% if post.published %}
+    <hr>
+    <div class="post-date">
+        <p>{{post.published}}</p>
+    </div>
+    <hr>
+    {% else %}
+        <a class="btn btn-success" href="{% url 'blog:publish' pk=post.pk %}">Publish</a>
+    {%endif%}
+    <img src="{{post.image.url}}" alt="" height="450" width="100%">
+    <p class="post-content">{{post.text|safe|linebreaksbr}}</p>
+    
+    </div>
+    
+    <hr>
+    <div class="container">
+        {% for comment in post.comment.all %}
+
+        <br>
+            {% if user.is_authenticated or comment.approved_comment %}
+            <hr>
+                <p class="comment-date">{{comment.created}}</p>
+                {% if not comment.approved_comment %}
+                <div>
+
+                        <a class="" href="{% url 'blog:approve_comment' pk=comment.pk %}"><i class="material-icons">check</i></span>
+                        </a>
+                        <a class="" href="{% url 'blog:remove_comment' pk=comment.pk %}"><i class="material-icons">clear</i></span>
+                        </a>
+                        
+            
+                </div>
+                    
+                {% endif %}
+                <p>Author: {{comment.author}}</p>
+                <p>{{comment.text|safe|linebreaks}}</p>
+            {% endif %}
+            {%empty%}
+            <p>No comment!</p>
+
+        {% endfor %}
+    </div>
+        
+    <div class="container">
+    <hr>
+        <h5>Leave a comment</h5>
+        <div class="form-group">
+        <form class="comment-form" action= "{% url 'blog:make_comment' pk=post.pk %}" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn waves-effect waves-light" >Submit<i class="material-icons right">send</i></button>
+        </form>
+
+    </div>
+{% endblock body %}
