@@ -1,0 +1,126 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ .flex-container, .flext{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  }
+  @media only screen and (max-width: 600px) {
+    .flex-container{
+      display: block;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+      }
+  }
+ 
+.container{
+  margin-bottom: 50px;
+}
+
+
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 25%;
+  justify-content: space-around;
+  border-radius: 12px;
+  -webkit-box-shadow: 3px 2px 15px 5px #67817b; 
+   box-shadow: 3px 2px 15px 5px #67817b;
+   margin-right: 20px;
+   margin-left: 20px;
+   padding: 20px;
+    margin-bottom: 50px;
+} 
+.post-title{
+  font-family: 'Indie Flower' 'Lucida Sans', cursive;
+  color: #26a69a;
+  flex: 5;
+  text-align:center;
+}
+.btn .btn-danger{
+  background-color: red;
+}
+.main-title{
+  color: aqua;
+  text-align: center;
+}
+.post-text{
+  text-align: center;
+}
+.comment-date{
+  text-align: right;
+}
+.title{
+  text-align: center;
+  color: #26a69a;
+}
+.post-date{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+}
+.box2{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+  .parallax-container .parallax img {
+    opacity: 1;
+  }
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}

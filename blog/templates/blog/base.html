@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    
+ 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+      
+      
+      
+    
+  </head>
+  <body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'blog:index' %}" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="nav-link" href="{% url 'blog:index' %}">Home <span class="sr-only"></span></a></li>
+        <li><a class="nav-link" href="{% url 'blog:about' %}">About</a></li>
+        <li><a class="nav-link" href="https://github.com/Epicdavid">Github</a></li>
+          {% if user.is_authenticated %}
+           <li> <a class="nav-item nav-link" href="{% url 'blog:create_post' %}">New Post</a></li>
+            <li><a class="nav-item nav-link" href="{% url 'blog:drafts' %}">My Drafts</a></li>
+            <li><a class="nav-tem nav-link" href="{% url 'Logout' %}">Log Out</a></li>
+            <li><a class="nav-tem nav-link">Welcome: {{user.username}}</a></li>
+          {% else %}
+            <li><a class="nav-tem nav-link" href="{% url 'admin:login' %}">Login</a></li>
+          
+        {% endif %}
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a class="nav-link" href="{% url 'blog:index' %}">Home <span class="sr-only"></span></a></li>
+        <li><a class="nav-link" href="{% url 'blog:about' %}">About</a></li>
+        <li><a class="nav-link" href="https://github.com/Epicdavid">Github</a></li>
+          {% if user.is_authenticated %}
+           <li> <a class="nav-item nav-link" href="{% url 'blog:create_post' %}">New Post</a></li>
+            <li><a class="nav-item nav-link" href="{% url 'blog:drafts' %}">My Drafts</a></li>
+            <li><a class="nav-tem nav-link" href="{% url 'Logout' %}">Log Out</a></li>
+            <li><a class="nav-tem nav-link">Welcome: {{user.username}}</a></li>
+          {% else %}
+            <li><a class="nav-tem nav-link" href="{% url 'admin:login' %}">Login</a></li>
+          
+        {% endif %}
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">CUSTOM BLOG</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive Blog based on Material Design and Django</h5>
+        </div>
+        <div class="row center">
+          <a href="{% url 'blog:index' %}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'img\background3.jpg' %}" alt=""></div>
+  </div>
+
+          
+             <div>     
+              {% block body %}
+
+              {% endblock %}
+          
+        </div>
+
+    <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+  </body>
+</html>
