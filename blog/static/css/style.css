@@ -11,6 +11,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px;
+<<<<<<< HEAD
   }
   @media only screen and (max-width: 600px) {
     .flex-container{
@@ -30,14 +31,30 @@
   display: flex;
   flex-wrap: wrap;
   flex: 1 1 25%;
+=======
+
+
+}
+.container{
+  margin-bottom: 50px;
+}
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 0;
+>>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
   justify-content: space-around;
   border-radius: 12px;
   -webkit-box-shadow: 3px 2px 15px 5px #67817b; 
    box-shadow: 3px 2px 15px 5px #67817b;
+<<<<<<< HEAD
    margin-right: 20px;
    margin-left: 20px;
    padding: 20px;
     margin-bottom: 50px;
+=======
+   margin-right: 30px;
+>>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
 } 
 .post-title{
   font-family: 'Indie Flower' 'Lucida Sans', cursive;
@@ -52,9 +69,12 @@
   color: aqua;
   text-align: center;
 }
+<<<<<<< HEAD
 .post-text{
   text-align: center;
 }
+=======
+>>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
 .comment-date{
   text-align: right;
 }

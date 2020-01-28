@@ -2903,7 +2903,10 @@ ul.staggered-list li {
   .show-on-extra-large {
     display: block !important;
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
 }
 
 @media only screen and (min-width: 993px) {
@@ -4313,7 +4316,11 @@ nav .nav-wrapper {
     display: none;
   }
 }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
 nav .sidenav-trigger {
   float: left;
   position: relative;
@@ -4335,7 +4342,10 @@ nav .brand-logo {
   padding: 0;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
 nav .brand-logo.center {
   left: 50%;
   -webkit-transform: translateX(-50%);

@@ -4,6 +4,7 @@
 <style>
 img {
   max-width: 100%;
+<<<<<<< HEAD
   height: 250px;
 }
 
@@ -48,3 +49,32 @@ img {
   
   
 {% endblock %}
+=======
+  height: 340px;
+}
+p {
+    align-text: center;
+}
+</style>
+<div class="container">
+    <div class="flex-container">
+        {% for post in post_list %} 
+        <div class="box">
+                <img src="{{post.image.url}}" alt="img">  
+            <h4 class="main-title"><a href="{%url 'blog:post_detail' pk=post.pk %}">{{post.title}}</a></h4>
+            <p>{{post.text|safe|truncatechars:200}}<span><a class="btn btn-info" href="{% url 'blog:post_detail' pk=post.pk %}">Read More</a></span>
+            </p>
+            <p class="post-date">Published on: {{post.published|date:"D M Y"}}</p><br>
+            <p><a href="{% url 'blog:post_detail' pk=post.pk %}">{{post.approve_comment.count}} Comments</a><p>
+        </div>
+        {% endfor %}
+
+        </div>
+ </div>   
+ 
+    
+          
+  
+  
+{% endblock body %}
+>>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
