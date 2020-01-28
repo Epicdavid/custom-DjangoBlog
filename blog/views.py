@@ -19,10 +19,6 @@ class PostList(ListView):
 
     def get_queryset(self):
         return Post.objects.filter(published__lte=timezone.now()).order_by('-published')
-<<<<<<< HEAD
-=======
-    
->>>>>>> 298a4073a8b47f62e4086412a26927f1a596705e
 
     template_name = 'blog/post-list.html'
 class PostDetail(DetailView):
