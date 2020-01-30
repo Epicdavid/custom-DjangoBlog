@@ -15,8 +15,9 @@ class PostForm(forms.ModelForm):
             'image': _('Post Image')
         }
         widgets = {
+            'author':forms.Select(attrs={"class":"browser-defaul"}),
             'title':forms.TextInput(attrs={'class':'form-control mw-90'}),
-            'author':forms.TextInput(attrs={"size":"input-field col s6"})
+            
         }
 class MyCommentForm(forms.ModelForm):
 

@@ -5,7 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
-
+select{
+  display: flex;
+}
  .flex-container, .flext{
   display: flex;
   flex-wrap: wrap;
