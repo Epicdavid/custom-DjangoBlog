@@ -22,7 +22,9 @@
     </div>
     <hr>
     {% else %}
+    <div>
         <a class="btn btn-success" href="{% url 'blog:publish' pk=post.pk %}">Publish</a>
+    </div>
     {%endif%}
     <img src="{{post.image.url}}" alt="" height="450" width="100%">
     <p class="post-content">{{post.text|safe|linebreaksbr}}</p>

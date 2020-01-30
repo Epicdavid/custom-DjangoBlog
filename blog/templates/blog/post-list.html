@@ -15,7 +15,7 @@ img {
         <div class="box">
             
             <img src="{{post.image.url}}" alt="img">  
-            <h class="main-title"><a href="{%url 'blog:post_detail' pk=post.pk %}">{{post.title}}</a></h>
+            <h3 class="main-title"><a href="{%url 'blog:post_detail' pk=post.pk %}">{{post.title}}</a></h3>
             <p class="post-text">{{post.text|safe|truncatechars:200}}<span><a class="btn btn-info" href="{% url 'blog:post_detail' pk=post.pk %}">Read More</a></span>
             </p>
             <p class="post-date">Published on: {{post.published|date:"D M Y"}}</p><br>

@@ -1,11 +1,17 @@
 {% extends "blog/base.html" %}
 {% block body %}
+
+  <div class="flex-container">
   {% for post in post_list %}
-    <div class="blog-post">
+    <div class="box">
         <p>created: {{ post.created|date:"d:m:Y" }}</p>
-        <h1><a href="{% url 'blog:post_detail' pk=post.pk %}">{{post.title}}</a></h1>
-        <p>{{ post.text|safe|truncatechars:200 }}</p>
+        <div class="post-title">><h3 class="posttitle"><a class="post-title" href="{% url 'blog:post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+        </div>
+        <div><a class="btn btn-success" href="{% url 'blog:publish' pk=post.pk %}">Publish</a></div>
+        
+
+          <p>{{ post.text|safe|truncatechars:200 }}</p>
     </div>
-    
   {% endfor %}
+</div>
 {% endblock body %}
