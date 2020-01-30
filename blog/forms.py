@@ -16,6 +16,7 @@ class PostForm(forms.ModelForm):
         }
         widgets = {
             'title':forms.TextInput(attrs={'class':'form-control mw-90'}),
+            'author':forms.TextInput(attrs={"size":"input-field col s6"})
         }
 class MyCommentForm(forms.ModelForm):
 
