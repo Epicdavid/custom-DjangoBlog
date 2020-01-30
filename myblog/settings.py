@@ -130,5 +130,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 LOGIN_URL = 'templates/registration/login'
-LOGIN_REDIRECT_URL = 'templates/blog/post-list.html'
+LOGIN_REDIRECT_URL = 'blog:index'
 django_heroku.settings(locals())

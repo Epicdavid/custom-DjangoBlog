@@ -30,7 +30,7 @@
             <li><a class="nav-tem nav-link" href="{% url 'Logout' %}">Log Out</a></li>
             <li><a class="nav-tem nav-link">Welcome: {{user.username}}</a></li>
           {% else %}
-            <li><a class="nav-tem nav-link" href="{% url 'admin:login' %}">Login</a></li>
+            <li><a class="nav-tem nav-link" href="{% url 'login' %}">Login</a></li>
           
         {% endif %}
       </ul>
@@ -45,7 +45,7 @@
             <li><a class="nav-tem nav-link" href="{% url 'Logout' %}">Log Out</a></li>
             <li><a class="nav-tem nav-link">Welcome: {{user.username}}</a></li>
           {% else %}
-            <li><a class="nav-tem nav-link" href="{% url 'admin:login' %}">Login</a></li>
+            <li><a class="nav-tem nav-link" href="{% url 'login' %}">Login</a></li>
           
         {% endif %}
       </ul>
